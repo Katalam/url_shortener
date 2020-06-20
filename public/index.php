@@ -49,7 +49,7 @@ if (isset($_GET['slug'])) {
         header('Location: ' . $redirection);
         exit;
     } else {
-        header('Location: https://url.katalam.com');
+        header('Location: ' . $_ENV['DOMAIN']);
         exit;
     }
 }

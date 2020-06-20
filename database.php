@@ -1,6 +1,8 @@
 <?php
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 function store($url) {
-    $conn = new PDO('mysql:dbname=url_shortener;host=localhost', 'root', 'admin');
+    $conn = new PDO($_ENV['DB'], $_ENV['USER'], $_ENV['PW']);
     $store = alreadyStored($url);
     if ($store != null) return $store;
     $statement = $conn->prepare(
@@ -19,7 +21,7 @@ function randomChar() {
 }
 
 function isUniqueSlug($slug) {
-    $conn = new PDO('mysql:dbname=url_shortener;host=localhost', 'root', 'admin');
+    $conn = new PDO($_ENV['DB'], $_ENV['USER'], $_ENV['PW']);
     $statement = $conn->prepare('SELECT * FROM urls WHERE slug=?');
     $statement->execute([$slug]);
     $conn = null;
@@ -27,7 +29,7 @@ function isUniqueSlug($slug) {
 }
 
 function getRedirection($slug) {
-    $conn = new PDO('mysql:dbname=url_shortener;host=localhost', 'root', 'admin');
+    $conn = new PDO($_ENV['DB'], $_ENV['USER'], $_ENV['PW']);
     $statement = $conn->prepare('SELECT * FROM urls WHERE slug=?');
     $statement->execute([$slug]);
     $conn = null;
@@ -35,7 +37,7 @@ function getRedirection($slug) {
 }
 
 function alreadyStored($url) {
-    $conn = new PDO('mysql:dbname=url_shortener;host=localhost', 'root', 'admin');
+    $conn = new PDO($_ENV['DB'], $_ENV['USER'], $_ENV['PW']);
     $statement = $conn->prepare('SELECT * FROM urls WHERE url=?');
     $statement->execute([$url]);
     $conn = null;
