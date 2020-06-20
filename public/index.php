@@ -16,6 +16,7 @@
 </html>
 <?php
 require '../database.php';
+
 if (isset($_GET['slug'])) {
     $redirection = getRedirection($_GET['slug']);
     if ($redirection != null) {
@@ -27,12 +28,11 @@ if (isset($_GET['slug'])) {
         exit;
     }
 }
-
 if (isset($_POST['submit'])) {
     $url = $_POST['input_url'];
     if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-        echo 'Not a valid url.';
-        return;
+       echo 'Not a valid url.';
+       return;
     }
     echo store($url);
 }
