@@ -5,12 +5,12 @@ function store($url) {
     if ($store != null) return $store;
 
     $statement = $conn->prepare(
-        'INSERT INTO urls (id, slug, url) VALUES (?, ?,?)'
+        'INSERT INTO urls (id, slug, url) VALUES (?, ?, ?)'
     );
     do {
         $slug = randomChar();
     } while(!isUniqueSlug($slug));
-    $statement->execute(array(null, $slug, $url));  
+    $statement->execute(array(null, $slug, $url));
     $conn = null;
     return $slug;
 }
