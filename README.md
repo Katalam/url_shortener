@@ -1,4 +1,3 @@
-~~~php+HTML
 # URL shortener
 
 To get in contact with php i started the most basic project that comes to my mind.
@@ -51,4 +50,3 @@ System should work now.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-~~~
