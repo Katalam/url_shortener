@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    background-color: #ecf0f3;
+    justify-content: center;
+    isolation: isolate;
+    position: relative;
+    overflow: hidden;
+}
+
+.form p {
+    border: none;
+    outline:none;
+    background: none;
+    font-size: 22px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+    width: 90%;
+    border-radius: 30px;
+    background: #ecf0f3;
+    text-align: center;
+}
+
+.form input{
+    border: none;
+    outline:none;
+    background: none;
+    font-size: 22px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+    width: 100%;
+    border-radius: 30px;
+    background: #ecf0f3;
+    box-shadow: 
+        inset 0 0 15px rgba(55, 84, 170,0),
+        inset 0 0 20px rgba(255, 255, 255,0),
+        7px 7px 15px rgba(55, 84, 170,.15),
+        -7px -7px 20px rgba(255, 255, 255,1),
+        inset 0px 0px 4px rgba(255, 255, 255,.2);
+    margin-right: 50px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.form .input {
+    width: 300px;
+    text-indent: 30px;
+}
+
+.form .button {
+    width: 150px;
+}
+
+.button:active {
+    box-shadow: 
+      inset 7px 7px 15px rgba(55, 84, 170,.15),
+      inset -7px -7px 20px rgba(255, 255, 255,1),
+      0px 0px 4px rgba(255, 255, 255,.2);
+      transition: box-shadow 50ms ease-in-out;
+  }
+
+input[type="submit"] {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.3333333333333333em;
+    font-weight: 900;
+}
