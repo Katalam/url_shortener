@@ -10,7 +10,6 @@ function store($url) {
         $slug = randomChar();
     } while(!isUniqueSlug($slug));
     $statement->execute(array(null, $slug, $url));
-    echo implode(",", $statement->errorInfo());
     $conn = null;
     return $slug;
 }

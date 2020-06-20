@@ -31,8 +31,8 @@ if (isset($_GET['slug'])) {
 if (isset($_POST['submit'])) {
     $url = $_POST['input_url'];
     if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-       echo 'Not a valid url.';
-       return;
+        echo 'Not a valid url.';
+        return;
     }
     echo store($url);
 }
