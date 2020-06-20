@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
     }
     $slug = store($url);
     echo '<script type="text/javascript">',
-    `copyToClipboard($slug);`,
+    `copyToClipboard('$slug');`,
     '</script>';
 }
 ?>
